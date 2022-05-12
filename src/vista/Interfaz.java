@@ -35,73 +35,87 @@ public class Interfaz extends javax.swing.JFrame {
     private void initComponents() {
 
         panel4 = new java.awt.Panel();
-        panel1 = new java.awt.Panel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        panel2 = new java.awt.Panel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        PanelDatos = new java.awt.Panel();
+        CajaTextoCedula = new javax.swing.JTextField();
+        CajaTextoTelefono = new javax.swing.JTextField();
+        CajaTextoNombre = new javax.swing.JTextField();
+        BotonAceptar = new javax.swing.JButton();
+        BotonLimpiar = new javax.swing.JButton();
+        PanelBaseDeDatos = new java.awt.Panel();
+        TablaProductos1 = new javax.swing.JScrollPane();
         TablaProductos = new javax.swing.JTable();
         PanelProducto = new java.awt.Panel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaProductosAgregados = new javax.swing.JTable();
         PanelBotonesBaseDeDatos = new java.awt.Panel();
+        BotonAgregar = new javax.swing.JButton();
+        BotonEditar = new javax.swing.JButton();
+        BotonEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panel4.setBackground(new java.awt.Color(204, 255, 255));
 
-        panel1.setBackground(new java.awt.Color(204, 204, 255));
+        PanelDatos.setBackground(new java.awt.Color(204, 204, 255));
 
-        jTextField1.setText("Cedula");
+        CajaTextoCedula.setText("Cedula");
 
-        jTextField2.setText("Nombre Completo");
+        CajaTextoTelefono.setText("Nombre Completo");
+        CajaTextoTelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CajaTextoTelefonoActionPerformed(evt);
+            }
+        });
 
-        jTextField3.setText("Nombre Completo");
+        CajaTextoNombre.setText("Nombre Completo");
+        CajaTextoNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CajaTextoNombreActionPerformed(evt);
+            }
+        });
 
-        jButton1.setBackground(new java.awt.Color(153, 255, 153));
-        jButton1.setText("Aceptar");
+        BotonAceptar.setBackground(new java.awt.Color(153, 255, 153));
+        BotonAceptar.setText("Aceptar");
 
-        jButton2.setBackground(new java.awt.Color(255, 102, 102));
-        jButton2.setText("Eliminar");
+        BotonLimpiar.setBackground(new java.awt.Color(255, 102, 102));
+        BotonLimpiar.setText("Limpiar");
 
-        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
-        panel1.setLayout(panel1Layout);
-        panel1Layout.setHorizontalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2))
+        javax.swing.GroupLayout PanelDatosLayout = new javax.swing.GroupLayout(PanelDatos);
+        PanelDatos.setLayout(PanelDatosLayout);
+        PanelDatosLayout.setHorizontalGroup(
+            PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDatosLayout.createSequentialGroup()
+                .addGroup(PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PanelDatosLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(BotonLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelDatosLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(CajaTextoNombre)
+                            .addComponent(CajaTextoCedula)
+                            .addComponent(CajaTextoTelefono))))
                 .addGap(20, 20, 20))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
         );
-        panel1Layout.setVerticalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel1Layout.createSequentialGroup()
+        PanelDatosLayout.setVerticalGroup(
+            PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDatosLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CajaTextoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CajaTextoCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CajaTextoTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        panel2.setBackground(new java.awt.Color(204, 255, 204));
+        PanelBaseDeDatos.setBackground(new java.awt.Color(204, 255, 204));
 
         TablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -114,22 +128,22 @@ public class Interfaz extends javax.swing.JFrame {
                 "ID", "Nombre", "CC", "Telefono"
             }
         ));
-        jScrollPane1.setViewportView(TablaProductos);
+        TablaProductos1.setViewportView(TablaProductos);
 
-        javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
-        panel2.setLayout(panel2Layout);
-        panel2Layout.setHorizontalGroup(
-            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelBaseDeDatosLayout = new javax.swing.GroupLayout(PanelBaseDeDatos);
+        PanelBaseDeDatos.setLayout(PanelBaseDeDatosLayout);
+        PanelBaseDeDatosLayout.setHorizontalGroup(
+            PanelBaseDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBaseDeDatosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 902, Short.MAX_VALUE)
+                .addComponent(TablaProductos1, javax.swing.GroupLayout.DEFAULT_SIZE, 902, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        panel2Layout.setVerticalGroup(
-            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel2Layout.createSequentialGroup()
+        PanelBaseDeDatosLayout.setVerticalGroup(
+            PanelBaseDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBaseDeDatosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE))
+                .addComponent(TablaProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
         );
 
         PanelProducto.setBackground(new java.awt.Color(255, 255, 204));
@@ -166,15 +180,39 @@ public class Interfaz extends javax.swing.JFrame {
 
         PanelBotonesBaseDeDatos.setBackground(new java.awt.Color(255, 204, 204));
 
+        BotonAgregar.setText("Agregar");
+
+        BotonEditar.setText("Editar");
+        BotonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEditarActionPerformed(evt);
+            }
+        });
+
+        BotonEliminar.setText("Eliminar");
+
         javax.swing.GroupLayout PanelBotonesBaseDeDatosLayout = new javax.swing.GroupLayout(PanelBotonesBaseDeDatos);
         PanelBotonesBaseDeDatos.setLayout(PanelBotonesBaseDeDatosLayout);
         PanelBotonesBaseDeDatosLayout.setHorizontalGroup(
             PanelBotonesBaseDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 101, Short.MAX_VALUE)
+            .addGroup(PanelBotonesBaseDeDatosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelBotonesBaseDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+                    .addComponent(BotonEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         PanelBotonesBaseDeDatosLayout.setVerticalGroup(
             PanelBotonesBaseDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(PanelBotonesBaseDeDatosLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(BotonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BotonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(190, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panel4Layout = new javax.swing.GroupLayout(panel4);
@@ -185,12 +223,12 @@ public class Interfaz extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel4Layout.createSequentialGroup()
-                        .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(PanelBaseDeDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(PanelBotonesBaseDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18))
                     .addGroup(panel4Layout.createSequentialGroup()
-                        .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(PanelDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(PanelProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -199,11 +237,11 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelBaseDeDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelBotonesBaseDeDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -226,6 +264,18 @@ public class Interfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BotonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonEditarActionPerformed
+
+    private void CajaTextoTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaTextoTelefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CajaTextoTelefonoActionPerformed
+
+    private void CajaTextoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaTextoNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CajaTextoNombreActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,20 +285,23 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonAceptar;
+    private javax.swing.JButton BotonAgregar;
+    private javax.swing.JButton BotonEditar;
+    private javax.swing.JButton BotonEliminar;
+    private javax.swing.JButton BotonLimpiar;
+    private javax.swing.JTextField CajaTextoCedula;
+    private javax.swing.JTextField CajaTextoNombre;
+    private javax.swing.JTextField CajaTextoTelefono;
+    public java.awt.Panel PanelBaseDeDatos;
     public java.awt.Panel PanelBotonesBaseDeDatos;
-    private java.awt.Panel PanelProducto;
+    public java.awt.Panel PanelDatos;
+    public java.awt.Panel PanelProducto;
     private javax.swing.JTable TablaProductos;
+    private javax.swing.JScrollPane TablaProductos1;
     private javax.swing.JTable TablaProductosAgregados;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private java.awt.Panel panel1;
-    private java.awt.Panel panel2;
-    private java.awt.Panel panel4;
+    public java.awt.Panel panel4;
     // End of variables declaration//GEN-END:variables
 
     //Agregar getter
